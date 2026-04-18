@@ -62,7 +62,7 @@ const menuData = [
     name: "Paket Hemat Duo",
     desc: "2 geprek original + 2 nasi + 2 es teh. Cocok makan berdua!",
     price: 40000,
-    emoji: "👫",
+    emoji: "img:paket hemat duo.jpeg",
     category: "paket",
     badge: "best",
     badgeText: "Favorit"
@@ -315,7 +315,7 @@ function renderMenu(filter = 'all') {
 
     card.innerHTML = `
       <div class="menu-card-img">
-        <span>${item.emoji}</span>
+        <span>${item.emoji.startsWith('img:') ? `<img src="${item.emoji.slice(4)}" style="width:100%;height:100%;object-fit:cover;">` : `<span>${item.emoji}</span>`}
         ${badgeHTML}
       </div>
       <div class="menu-card-body">
